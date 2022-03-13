@@ -14,3 +14,13 @@ test('should generate random bubble tea', () => {
   // Restore the default Math.random
   jest.spyOn(global.Math, 'random').mockRestore();
 });
+
+test('should generate pseudo "random" bubble tea - PEACHICETEA', () => {
+  jest.spyOn(global.Math, 'random').mockReturnValue(0.6);
+
+  const bubbleTea = getRandomBubbleTeaType();
+
+  expect(bubbleTea).toBe('PEACHICETEA');
+
+  jest.spyOn(global.Math, 'random').mockRestore();
+});

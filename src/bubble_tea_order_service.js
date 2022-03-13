@@ -15,6 +15,8 @@ const createOrderRequest = (bubbleTeaRequest) => {
   } = bubbleTeaRequest;
 
   const orderRequest = {
+    /* this is being picked up from the values in the
+    anonymous object literal above it. */
     name,
     address,
     digits,
